@@ -1,0 +1,32 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+	<display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>SearchUserServlet</servlet-name>
+		<display-name>SearchUserServlet</display-name>
+		<description></description>
+		<servlet-class>myCertification.bank.controller.SearchUserServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CreateAccountServlet</servlet-name>
+		<display-name>CreateAccountServlet</display-name>
+		<description></description>
+		<servlet-class>myCertification.bank.controller.CreateAccountServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchUserServlet</servlet-name>
+		<url-pattern>/search</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>CreateAccountServlet</servlet-name>
+		<url-pattern>/create-account</url-pattern>
+	</servlet-mapping>
+
+</web-app>
