@@ -26,7 +26,6 @@
 </select><br><br>
 <input type="submit" value="Create Account">
 </form>
-<h2 id="user-id"></h2>
 
 
 </body>
