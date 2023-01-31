@@ -10,16 +10,16 @@ public class Transaction {
 		super();
 	}
 
-	public Transaction(Date date, String description, Long amount, Long accountFrom, Long userId) {
+	public Transaction(Date dateTx, String description, Long amount, Long accountFrom, Long userId) {
 		super();
-		this.date = date;
+		this.dateTx = dateTx;
 		this.description = description;
 		this.amount = amount;
 		this.accountFrom = accountFrom;
 		this.userId = userId;
 	}
 	
-	private Date date;
+	private Date dateTx;
 	private String description;
 	private Long amount;
 	private Long accountTo;
@@ -31,11 +31,11 @@ public class Transaction {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Date getDate() {
-		return date;
+	public Date getDateTx() {
+		return dateTx;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDate(Date dateTx) {
+		this.dateTx = dateTx;
 	}
 	public String getDescription() {
 		return description;
@@ -64,7 +64,7 @@ public class Transaction {
 	
 	@Override
 	public String toString() {
-		return "Transaction [id=" + id + ", date=" + date + ", description=" + description + ", accountTo=" + accountTo
+		return "Transaction [id=" + id + ", date=" + dateTx + ", description=" + description + ", accountTo=" + accountTo
 				+ ", accountFrom=" + accountFrom + ", userId=" + userId + "]";
 	}
 
