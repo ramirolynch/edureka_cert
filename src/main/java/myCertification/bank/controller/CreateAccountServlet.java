@@ -48,6 +48,7 @@ public class CreateAccountServlet extends HttpServlet {
 
 		    Account acc = new Account(name,dob1,address,email,accounttype, userId);
 		    accountService.saveAccount(acc);
+		    response.sendRedirect("accountsaved.jsp");
 		
 		} catch (ParseException e) {
 			

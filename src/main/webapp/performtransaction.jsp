@@ -7,15 +7,15 @@
 <title>Perform Debit or Credit operation</title>
 </head>
 <body>
-<form action="create-account" method="post">
+<form action="save-transaction" method="post">
 <h1>Perform Debit or Credit operation</h1>
 <label>Account Number:</label>
 <input type="number" name="acc" id="acc" required><br><br>
 <label>Amount:</label>
 <input type="number" name="amt" id="amt" required><br><br>
 
-<input type="submit" value="Debit From">
-<input type="submit" value="Credit To">
+<input type="submit" name="debit" value="Debit From">
+<input type="submit" name="credit" value="Credit To">
 </form>
 
 </body>

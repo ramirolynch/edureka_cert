@@ -1,6 +1,5 @@
 package myCertification.bank.services;
 
-import java.util.List;
 
 import myCertification.bank.dto.Account;
 

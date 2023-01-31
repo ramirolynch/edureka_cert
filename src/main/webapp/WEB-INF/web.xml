@@ -17,6 +17,13 @@
 		<description></description>
 		<servlet-class>myCertification.bank.controller.CreateAccountServlet</servlet-class>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>SaveTransactionServlet</servlet-name>
+		<display-name>SaveTransactionServlet</display-name>
+		<description></description>
+		<servlet-class>myCertification.bank.controller.SaveTransactionServlet</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>SearchUserServlet</servlet-name>
@@ -27,6 +34,11 @@
 	<servlet-mapping>
 		<servlet-name>CreateAccountServlet</servlet-name>
 		<url-pattern>/create-account</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>SaveTransactionServlet</servlet-name>
+		<url-pattern>/save-transaction</url-pattern>
 	</servlet-mapping>
 
 </web-app>
