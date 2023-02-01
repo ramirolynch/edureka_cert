@@ -21,10 +21,10 @@ public class TransactionDaoImpl implements TransactionDao {
 		SimpleJdbcInsert insert = new SimpleJdbcInsert(jt).withTableName("transactions").usingGeneratedKeyColumns("id");
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("user_id", tx.getUserId());
-		parameters.put("dateTx", tx.getDateTx());
+		parameters.put("date_tx", tx.getDateTx());
 		parameters.put("description", tx.getDescription());
 		parameters.put("amount", tx.getAmount());
-		parameters.put("account_to", tx.getAccountTo());
+		parameters.put("account_to", tx.getAccountFrom());
 		
 		int txSaved = insert.execute(parameters);
 		
@@ -39,7 +39,7 @@ public Integer saveDebit(Transaction tx) {
 		parameters.put("date_tx", tx.getDateTx());
 		parameters.put("description", tx.getDescription());
 		parameters.put("amount", tx.getAmount());
-		parameters.put("account_from", tx.getAccountTo());
+		parameters.put("account_from", tx.getAccountFrom());
 		
 		int txSaved = insert.execute(parameters);
 		
