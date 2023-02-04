@@ -17,7 +17,7 @@ public class AccountDaoImpl implements AccountDao {
 	public Integer saveAccount(Account acc) {
 		
 		SimpleJdbcInsert insert = new SimpleJdbcInsert(jt).withTableName("accounts").usingGeneratedKeyColumns("id");
-		Map<String, Object> parameters = new HashMap<>();
+		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("user_id", acc.getUserId());
 		parameters.put("account_name", acc.getName());
 		parameters.put("date_of_birth", acc.getDateOfBirth());

@@ -9,7 +9,7 @@
 
 <a href="accountcreation.jsp">Create Account</a><br><br>
 <a href="performtransaction.jsp">Transactions</a><br><br>
-<a href="anchor_target.jsp">Display Bank Statement</a><br><br>
+<a href="list-transactions">Display Bank Statement</a><br><br>
 <a href="anchor_target.jsp">Authorize credit card account</a>
 </body>
 </html>

@@ -25,8 +25,10 @@ public class CreateAccountServlet extends HttpServlet {
 	
 	private AccountService accountService;
 	
+	ApplicationContext context;
+	
 	public void init(ServletConfig config) throws ServletException {
-		ApplicationContext context = new ClassPathXmlApplicationContext("account-beans.xml");
+		context = new ClassPathXmlApplicationContext("account-beans.xml");
 		accountService = (AccountService) context.getBean("acc-service");
 	}
 
@@ -44,8 +46,8 @@ public class CreateAccountServlet extends HttpServlet {
 			String email = request.getParameter("email");
 			String accounttype = request.getParameter("accounttype");
 			HttpSession session=request.getSession();
-			long userId = (long) session.getAttribute("id");
-
+			Object userIdObject = session.getAttribute("id");
+			long userId = (long)userIdObject;
 		    Account acc = new Account(name,dob1,address,email,accounttype, userId);
 		    accountService.saveAccount(acc);
 		    response.sendRedirect("accountsaved.jsp");
@@ -65,5 +67,10 @@ public class CreateAccountServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
+	
+	public void destroy() {
+	    ((ClassPathXmlApplicationContext)context).close();
+	}
+	
 
 }

@@ -22,16 +22,15 @@ public class SearchUserServlet extends HttpServlet {
 private static final long serialVersionUID = 1L;
 	
 	private UserService userService;
+	ApplicationContext context;
 	public void init(ServletConfig config) throws ServletException {
-		ApplicationContext context = new ClassPathXmlApplicationContext("bank-beans.xml");
+		context = new ClassPathXmlApplicationContext("bank-beans.xml");
 		userService = (UserService) context.getBean("bank-service");
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		
 		HttpSession session=request.getSession();  
-		
 		String inputValue = request.getParameter("id");
 		Long intValue = Long.parseLong(inputValue);
 		session.setAttribute("id",intValue);  
@@ -50,12 +49,13 @@ private static final long serialVersionUID = 1L;
 		else {
 			//TODO: redirect to an account doesn't exist
 			out.println("user is null");
-			
 		}
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
+	}
+	public void destroy() {
+	    ((ClassPathXmlApplicationContext)context).close();
 	}
 
 }

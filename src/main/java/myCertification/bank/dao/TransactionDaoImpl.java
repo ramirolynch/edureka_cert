@@ -24,7 +24,7 @@ public class TransactionDaoImpl implements TransactionDao {
 	public Integer saveCredit(Transaction tx) {
 
 		SimpleJdbcInsert insert = new SimpleJdbcInsert(jt).withTableName("transactions").usingGeneratedKeyColumns("id");
-		Map<String, Object> parameters = new HashMap<>();
+		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("user_id", tx.getUserId());
 		parameters.put("date_tx", tx.getDateTx());
 		parameters.put("description", tx.getDescription());
@@ -38,7 +38,7 @@ public class TransactionDaoImpl implements TransactionDao {
 	public Integer saveDebit(Transaction tx) {
 
 		SimpleJdbcInsert insert = new SimpleJdbcInsert(jt).withTableName("transactions").usingGeneratedKeyColumns("id");
-		Map<String, Object> parameters = new HashMap<>();
+		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("user_id", tx.getUserId());
 		parameters.put("date_tx", tx.getDateTx());
 		parameters.put("description", tx.getDescription());
@@ -52,18 +52,19 @@ public class TransactionDaoImpl implements TransactionDao {
 
 	public List<Transaction> findAllTransactionsByUserId(Long user_id) {
 
-		String sql = "select dateTx, description, amount, accountTo, accountFrom from transactions where user_id="
+		String sql = "select tx.date_tx, tx.description, tx.amount, tx.account_to, tx.account_from from transactions as tx where user_id="
 				+ user_id;
 
 		List<Transaction> txs = jt.query(sql, new ResultSetExtractor<List<Transaction>>() {
 			public List<Transaction> extractData(ResultSet rs) throws SQLException, DataAccessException {
 				List<Transaction> tx = new ArrayList<Transaction>();
 				while (rs.next()) {
-					Date date_tx = rs.getDate(2);
-					String desc = rs.getString(3);
-					Long amt = rs.getLong(4);
-					Long acc_to = rs.getLong(5);
-					Long acc_from = rs.getLong(6);
+					
+					Date date_tx = rs.getDate(1);
+					String desc = rs.getString(2);
+					Long amt = rs.getLong(3);
+					Long acc_to = rs.getLong(4);
+					Long acc_from = rs.getLong(5);
 					Transaction transaction = new Transaction(date_tx, desc, amt, acc_to, acc_from);
 					tx.add(transaction);
 				}
