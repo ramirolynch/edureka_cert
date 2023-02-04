@@ -19,6 +19,16 @@ public class Transaction {
 		this.userId = userId;
 	}
 	
+	public Transaction(Date dateTx, String description, Long amount, Long accountTo, Long accountFrom, Long userId) {
+		super();
+		this.dateTx = dateTx;
+		this.description = description;
+		this.amount = amount;
+		this.accountTo = accountTo;
+		this.accountFrom = accountFrom;
+		this.userId = userId;
+	}
+	
 	private Date dateTx;
 	private String description;
 	private Long amount;

@@ -1,5 +1,7 @@
 package myCertification.bank.dao;
 
+import java.util.List;
+
 import myCertification.bank.dto.Transaction;
 
 public interface TransactionDao {
@@ -8,15 +10,6 @@ public interface TransactionDao {
     
     Integer saveDebit(Transaction tx);
     
-    /*
-	
-	Integer updateAccount(Account acc);
-	
-	Integer deleteAccountById(Long id);
-	
-	Account findAccountById(Long id);
-	
-	List<Account> findAllAccounts();
-*/
+    List<Transaction> findAllTransactionsByUserId(Long user_id);
 
 }
