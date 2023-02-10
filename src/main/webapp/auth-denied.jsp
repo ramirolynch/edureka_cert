@@ -2,10 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Bank Home Page</title>
+<title>Authorization Denied</title>
 </head>
 <body>
-<h1>Account Saved Successfully</h1>
+<h1>Authorization Has Been Denied</h1>
+
+<p>Your Authorization Maximum is $ 100,000</p>
+<br><br>
 
 <a href="performtransaction.jsp">Transactions</a><br><br>
 <a href="list-transactions">Display Bank Statement</a><br><br>

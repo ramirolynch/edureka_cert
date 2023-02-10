@@ -48,7 +48,7 @@ public class SaveTransactionServlet extends HttpServlet {
 				Transaction tx = new Transaction(today, description, amount, acc_to_long, userId);
 
 				transactionService.saveCredit(tx);
-
+			    response.sendRedirect("home.jsp");
 			}
 			if (request.getParameter("debit") != null) {
 
@@ -59,6 +59,7 @@ public class SaveTransactionServlet extends HttpServlet {
 				Transaction tx = new Transaction(today, description, amount, acc_from_long, userId);
 
 				transactionService.saveDebit(tx);
+				 response.sendRedirect("home.jsp");
 
 			}
 		}

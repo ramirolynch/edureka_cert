@@ -2,10 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Bank Home Page</title>
+<title>Credit Card Number Not Valid</title>
 </head>
 <body>
-<h1>Account Saved Successfully</h1>
+<h1>The Card/CVV Entered do not correspond to a valid card number</h1>
+
+<p>Please try again!</p>
+<br><br>
 
 <a href="performtransaction.jsp">Transactions</a><br><br>
 <a href="list-transactions">Display Bank Statement</a><br><br>
